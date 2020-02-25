@@ -18,6 +18,34 @@ public class ArrayListMethods {
             System.out.println(list);
             return list;
         }
+
+    public static ArrayList<Double> firstAndLast() {
+        ArrayList<Double> list = new ArrayList<Double>();
+        System.out.println("Enter a decimal: ");
+        double dec = scan.nextDouble();
+        list.add(dec);
+        while (dec != 0) {
+            System.out.println("Enter a decimal: ");
+            dec = scan.nextDouble();
+            list.add(dec);
+            if (dec == 0)
+                break;
+        }
+        return list;
+    }
+
+    public static ArrayList<Double> getNumbers(){
+            ArrayList<Double> list = new ArrayList<Double>();
+            double dec = 0;
+            for (int i = 0; i >= 3; i++){
+               dec = scan.nextDouble();
+               list.add(dec);
+           }
+            for (int i = 0; i < list.size(); i++){
+
+            }
+    }
+
         public static void main(String[] args){
 
         }
