@@ -23,57 +23,60 @@ public class ArrayListMethods {
     public static ArrayList<Double> firstAndLast() {
         ArrayList<Double> list = new ArrayList<Double>();
         while (true) {
-            System.out.println("Enter a decimal: ");
             double dec = scan.nextDouble();
         if (dec == 0)
                 break;
-
         list.add(dec); }
-        return list;
+        ArrayList<Double> list2 = new ArrayList<Double>();
+        list2.add((double)list.size());
+        list2.add(list.get(0));
+        list2.add(list.get(list.size()-1));
+        return list2;
     }
 
     public static ArrayList<Double> getNumbers(){
-            ArrayList<Double> list = new ArrayList<Double>();
-            double dec = 0;
-            for (int i = 0; i < 3; i++){
-                System.out.println("Enter a decimal: ");
-               dec = scan.nextDouble();
-               list.add(dec);
-           }
-            return list;
+        ArrayList<Double> list = new ArrayList<Double>();
+
+        int y = 0;
+
+        while(y < 3) {
+            System.out.println("Enter a decimal number: ");
+            double x = scan.nextDouble();
+            list.add(x);
+            y++;
+        }
+        return list;
     }
     public static ArrayList<Double> arrangeList(ArrayList<Double> numbers){
-        ArrayList<Double> list = new ArrayList<Double>();
        double biggest = 0;
        double smallest = 0;
        double middle = 0;
-       if(list.get(0) > list.get(1) && list.get(0) > list.get(2)){
-           biggest = list.get(0);
-       list.remove(0);}
-       else if (list.get(1) > list.get(0) && list.get(1) > list.get(2)){
-           biggest = list.get(1);
-       list.remove(1);}
-        else if (list.get(2) > list.get(1) && list.get(2) > list.get(0)){
-            biggest = list.get(2);
-        list.remove(2);}
-        else if (list.get(2) > list.get(0) && list.get(1) > list.get(0)){
-            smallest = list.get(0);
-        list.remove(0);}
-        else if (list.get(0) > list.get(1) && list.get(2) > list.get(1)){
-            smallest = list.get(1);
-        list.remove(1);}
-        else if (list.get(0) > list.get(2) && list.get(1) > list.get(2)){
-            smallest = list.get(2);
-        list.remove(2);}
+       if(numbers.get(0) > numbers.get(1) && numbers.get(0) > numbers.get(2)){
+           biggest = numbers.get(0);
+       numbers.remove(0);}
+       else if (numbers.get(1) > numbers.get(0) && numbers.get(1) > numbers.get(2)){
+           biggest = numbers.get(1);
+           numbers.remove(1);}
+        else {
+            biggest = numbers.get(2);
+           numbers.remove(2);}
+        if (numbers.get(0) > numbers.get(1)){
+            middle = numbers.get(0);
+            smallest = numbers.get(1);
+           numbers.remove(0);}
         else{
-            middle = list.get(0);
+            middle = numbers.get(1);
+            smallest = numbers.get(0);
        }
+        ArrayList<Double> list = new ArrayList<Double>();
+        list.add(smallest);
+        list.add(middle);
+        list.add(biggest);
+
         return list;
        }
 
     public static void main(String[] args){
-            numberList();
-            System.out.println(firstAndLast());
             ArrayList<Double> list = getNumbers();
             System.out.println(arrangeList(list));
         }
