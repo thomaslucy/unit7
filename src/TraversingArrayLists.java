@@ -25,6 +25,7 @@ public class TraversingArrayLists {
             else
                 states.add(y);
         }
+        System.out.println(states);
         return states;
     }
 
@@ -42,10 +43,10 @@ public class TraversingArrayLists {
         while (scan.hasNext()) {
             list.add(scan.nextInt());
         }
-        int s = list.get(0);
-        int b = list.get(0);
         for (int x = 0; x < list.size(); x++)
             System.out.print(list.get(x) + " ");
+        int s = list.get(0);
+        int b = list.get(0);
         for(int x = 0; x < list.size(); x++){
             if(list.get(x) < s)
                 s = list.get(x);
@@ -59,12 +60,12 @@ public class TraversingArrayLists {
         for (int x = 0; x < list.size(); x++)
             System.out.print(list.get(x) + " ");
         return list;
-
     }
 
 
-    public static void main(String[] args) throws IOException{
-        System.out.println(getStates());
-        System.out.println(largestAndSmallest());
+  public static void main(String[] args) throws IOException {
+        ArrayList<String> list = getStates();
+        System.out.println(createList(list));
+        largestAndSmallest();
     }
 }
