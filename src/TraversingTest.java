@@ -49,19 +49,19 @@ public class TraversingTest {
 
         assertEquals(numbers, TraversingArrayLists.largestAndSmallest());
     }
-    }
 
-//   @Test
-//    public void testRectangleArea() {
-//        ArrayList<Rectangle> r = new ArrayList<>();
-//        r.add(new Rectangle(5, 6));
-//        r.add(new Rectangle(2.5, 7.25));
-//        r.add(new Rectangle(8, 4));
-//        r.add(new Rectangle(3.5, 1));
-//        r.add(new Rectangle(2.3, 1.5));
-//        r.add(new Rectangle(5, 3.25));
-//
-//        assertEquals(17.22, ListOfRectangles.findAverage(r), 0.1);
-//
-//    }
-//}
+
+   @Test
+    public void testRectangleArea() {
+        ArrayList<Rectangle> r = new ArrayList<>();
+        r.add(new Rectangle(5, 6));
+        r.add(new Rectangle(2.5, 7.25));
+        r.add(new Rectangle(8, 4));
+        r.add(new Rectangle(3.5, 1));
+        r.add(new Rectangle(2.3, 1.5));
+        r.add(new Rectangle(5, 3.25));
+
+        assertEquals(17.22, ListofRectangles.findAverage(r), 0.1);
+
+    }
+}
