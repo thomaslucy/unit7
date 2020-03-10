@@ -55,7 +55,7 @@ public class Algorithms {
                     list.add(i + 1,val);
                     break;
                 }
-                else if (val > list.get(0))
+                else if (val < list.get(0))
                     list.add(0, val);
             }
         }
