@@ -28,6 +28,12 @@ public class Algorithms {
         ArrayList<String> list = new ArrayList<String>();
         Scanner scan = new Scanner(new File("Names.txt"));
         String names = scan.nextLine();
+        int length = 0;
+        while(names.indexOf(" ", length) > -1){
+            String word = names.substring(length, names.indexOf(" ", length) + 1);
+            list.add(word);
+            length += word.length();
+        }
         for (int i = 0; i < list.size(); i++){
             for (int a = i+1; a< list.size(); a++){
                 if (list.get(i).equals(list.get(a))){
@@ -42,14 +48,23 @@ public class Algorithms {
         ArrayList<Integer> list = new ArrayList<Integer>();
         Scanner scan = new Scanner(new File("file1.txt"));
         list.add(scan.nextInt());
-        int num = 0;
         while (scan.hasNext()){
-
+            int val = scan.nextInt();
+            for (int i = list.size()-1; i >= 0; i--){
+                if (val > list.get(i)){
+                    list.add(i + 1,val);
+                    break;
+                }
+                else if (val > list.get(0))
+                    list.add(0, val);
+            }
         }
+        return list;
     }
 
     public static void main(String[] args) throws FileNotFoundException{
         System.out.println(fileDuplicates());
         System.out.println(fileDuplicatesTwo());
+        System.out.println(orderedList());
 }
 }
