@@ -21,9 +21,9 @@ public class AlgorithmsTest {
         assertEquals(myList, Algorithms.fileDuplicatesTwo());
     }
 
-//    @Test
-//    public void orderedList() throws IOException {
-//        ArrayList<Integer> myList = new ArrayList<Integer>(Arrays.asList(10, 11, 17, 20, 25, 28, 30, 32, 35, 39, 41, 48, 55, 62, 74, 75, 77, 88, 89, 97));
-//        assertEquals(myList, Algorithms.orderedList());
-//    }
+    @Test
+    public void orderedList() throws IOException {
+        ArrayList<Integer> myList = new ArrayList<Integer>(Arrays.asList(10, 11, 17, 20, 25, 28, 30, 32, 35, 39, 41, 48, 55, 62, 74, 75, 77, 88, 89, 97));
+        assertEquals(myList, Algorithms.orderedList());
+    }
 }
