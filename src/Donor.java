@@ -1,10 +1,10 @@
 public class Donor {
-    private double amount;
     private String name;
+    private double amount;
 
     public Donor(double amount, String name){
-        this.amount = amount;
         this.name = name;
+        this.amount = amount;
     }
 
     public double getAmount() {

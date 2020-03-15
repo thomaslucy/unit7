@@ -17,11 +17,26 @@ public class DonorRunner {
         return donors;
     }
 
-    public static void donorSort(ArrayList<Donor> list){
-        for (int next = 0; next < list.size() - 1; next --){}
+    public static ArrayList<Donor> donorSort(ArrayList<Donor> list){
+        ArrayList<Donor> donors = new ArrayList<>();
+        for (int next = 0; next < list.size() - 1; next --){
+            donors.add(next, new Donor(1.0, "Billy"));
+        }
+        int next = 0;
+        for (int i = 0; i < donors.size(); i++){
+            for (int j = 0; j < donors.size(); j++){
+                if (donors.get(i).getAmount()>donors.get(j).getAmount())
+                    next++;
+            }
+            donors.set((donors.size()-1)-next, donors.get(i));
+        }
+        for (Donor a: donors)
+            System.out.println(a);
+        return donors;
     }
 
     public static void main(String[] args) throws FileNotFoundException {
-        System.out.println(readFile());
+        ArrayList<Donor> donors = readFile();
+        donorSort(donors);
     }
 }
